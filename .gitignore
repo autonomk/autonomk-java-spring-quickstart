@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Autonomk AI client ###
+### remove this if you want to include the Autonmk AI client in your project ###
+/src/main/resources/static/
+
