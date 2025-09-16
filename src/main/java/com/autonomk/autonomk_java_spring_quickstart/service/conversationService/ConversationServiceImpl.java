@@ -31,7 +31,7 @@ public class ConversationServiceImpl implements IConversationService {
     public Conversation createConversation(CreateConversationRequestDto createConversationDto) {
         Instant now = Instant.now();
         var chatId = UUID.randomUUID().toString();
-        long timestamp = now.toEpochMilli();
+        long timestamp = now.toEpochMilli()/1000L;
 
         var name = createConversationDto.getName();
         var type = createConversationDto.getType();
@@ -71,7 +71,7 @@ public class ConversationServiceImpl implements IConversationService {
 
             // construct a new chat Message object
 
-        long time = now.toEpochMilli();
+        long time = now.toEpochMilli()/1000L;
 
         var chatId = UUID.randomUUID().toString();
 
@@ -105,7 +105,7 @@ public class ConversationServiceImpl implements IConversationService {
 
         var now  = Instant.now();
 
-        long updatedTime = now.toEpochMilli();
+        long updatedTime = now.toEpochMilli()/1000L;
 
         // update the time this was updated
         conversation.setUpdatedAt(updatedTime);
