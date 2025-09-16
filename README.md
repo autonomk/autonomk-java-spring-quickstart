@@ -31,7 +31,7 @@ After you have installed and have ollama running in your terminal, update the `s
 ### Autonomk AI Client
 Download the Autonomk AI client from the [Autonomk website](https://autonomk.com/). 
 
-* In the `public/script/env.js` folder including the `AUTH: "basic"` field. This will enable [basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Authentication) in the Autonomk AI client. **DO NOT USE BASIC AUTHENTICATION IN PRODUCTION.** This is just for testing purposes. If you do not set *AUTH:"BASIC"* for this repo, then the Spring Boot app will not be able to log you in.
+* In the `public/script/env.js` folder including the `AUTH: "basic"` field. This will enable [basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Authentication) in the Autonomk AI client. **DO NOT USE BASIC AUTHENTICATION IN PRODUCTION.** This is just for testing purposes. If you do not set *AUTH:"BASIC"* for this repo, then the Spring Boot may not be able to log you in.
 
 * You can change the port the AI client points to in the env.js file by updating the `HOST` field.
 
@@ -63,6 +63,12 @@ The `public/scripts/env.js` file in the Autonomk AI client contains environment 
 |TITLE | The title of the AI client, used on the login pages and in the html document
 |DEFAULT_THEME| The default theme, either light or dark
 |AUTH | **"basic"** only used for Basic Authentication 
+
+### .gitignore
+In this repo the **resources/static** folder is ignored by git. Remove this line if you want to push the Autonomk AI client files to git.
+
+### Web Server
+The web server is defined in the **SpaController.java** file, this serves the AI client.
 
 ## Notes
 
