@@ -43,7 +43,7 @@ Clone this repo and have the following installed as a minimum:
 
 ## Development
 ### Styling
-* To style the Autonomk AI client, use [tweakcn](https://tweakcn.com/), click on start **Start Customizing**, once you have picked your colours click on **code** in the top right-hand corner. This opens a dialog containing the CSS code, which looks something like this
+* To style the Autonomk AI client, use [tweakcn](https://tweakcn.com/), click on **Start Customizing**, once you have picked your colours click on **code** in the top right-hand corner. This opens a dialog containing the CSS code, which looks something like this
 ```css
 :root {
   --background: oklch(0.9777 0.0041 301.4256);
