@@ -1,8 +1,4 @@
-<style>
-r { color: #45B9D7 }
-</style>
-
-# [<r>Autonomk </r>](https://autonomk.com/) &middot; ![GitHub license](https://img.shields.io/badge/license-apache-blue.svg)
+# [Autonomk](https://autonomk.com/) &middot; ![GitHub license](https://img.shields.io/badge/license-apache-blue.svg)
 
 Autonomk makes it fast and easy to build your private AI platform. You control all elements of your data and tech, we help you build it.
 
