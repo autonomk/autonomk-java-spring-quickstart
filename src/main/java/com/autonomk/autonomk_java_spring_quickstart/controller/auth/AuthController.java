@@ -1,7 +1,6 @@
 package com.autonomk.autonomk_java_spring_quickstart.controller.auth;
 
 import com.autonomk.autonomk_java_spring_quickstart.dto.login.LoginRequestDto;
-import com.autonomk.autonomk_java_spring_quickstart.dto.login.LoginResponseDto;
 import com.autonomk.autonomk_java_spring_quickstart.dto.logout.LogoutRequestDto;
 import com.autonomk.autonomk_java_spring_quickstart.dto.logout.LogoutResponseDto;
 import com.autonomk.autonomk_java_spring_quickstart.service.authService.AuthServiceImpl;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/api/v0/auth")
@@ -25,21 +25,24 @@ public class AuthController {
         this._authservice = authService;
     }
 
-    public static class LoginRequest {
-        private String username;
-        private String password;
-
-        // getters and setters
-    }
+    public record LoginRequestUnauthorized(String message) { }
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponseDto> login(@RequestBody LoginRequestDto loginRequest){
+    public ResponseEntity<?> login(@RequestBody LoginRequestDto loginRequest){
 
-        var loginResponse = _authservice.login();
-        // replace this with
+        if(Objects.equals(loginRequest.getUsername(), "user") && Objects.equals(loginRequest.getPassword(), "password")){
+            var loginResponse = _authservice.login();
+            // replace this with
+            return ResponseEntity
+                    .status(HttpStatus.OK)
+                    .body(loginResponse);
+        }
+        var unauthorizedResponseBody = new LoginRequestUnauthorized(null);
         return ResponseEntity
-                .status(HttpStatus.OK)
-                .body(loginResponse);
+                .status(HttpStatus.UNAUTHORIZED)
+                .body(unauthorizedResponseBody);
+
+
     }
 
 
