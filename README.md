@@ -31,6 +31,13 @@ After you have installed and have ollama running in your terminal, update the `s
 ### Autonomk AI Client
 Download the Autonomk AI client from the [Autonomk website](https://autonomk.com/). 
 
+* The username and password have been hardcoded to the following credentials
+
+| credentials  | values  |
+| --- | --- |
+|username | user
+|password | password
+
 * You can change the port the AI client points to in the env.js file by updating the `HOST` field.
 
 ## Installation
